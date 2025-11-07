@@ -26,6 +26,14 @@ function getTextElementValueById(elementId) {
     return value;
 }
 
+function finalScoreSet() {
+    const finalScoreElement = document.getElementById('final-score');
+    const playgroundPageScoreElement = document.getElementById('current-score');
+    const finalScore = playgroundPageScoreElement.innerText
+    console.log(finalScore);
+    finalScoreElement.innerText = finalScore;
+}
+
 function getARandomAlphabet() {
     let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     let alphabets = alphabetString.split('');
