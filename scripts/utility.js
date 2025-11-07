@@ -10,6 +10,10 @@ function setBackgroundColor(elementId) {
     document.getElementById(elementId).classList.add('bg-orange-400', 'text-black');
 }
 
+function removeBackgroundColor(elementId) {
+    document.getElementById(elementId).classList.remove('bg-orange-400', 'text-black');
+}
+
 function getARandomAlphabet() {
     let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     let alphabets = alphabetString.split('');
