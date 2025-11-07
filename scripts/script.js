@@ -7,39 +7,20 @@ document.getElementById('page-home-btn').addEventListener('click', function() {
 
 function handleKeyboardKeyUpEvent(event) {
     let playerPressed = event.key;
-    // console.log(playerPressed);
     let currentAlphabetElement = document.getElementById('random-character');
-    // console.log(currentAlphabet);
     let currentAlphabet = currentAlphabetElement.innerText;
     console.log(currentAlphabet);
-    // console.log(playerPressed, currentAlphabet);
-    if(playerPressed === currentAlphabet) {
-        // console.log('you get a point');
-        // update score
-        // 1. get the current score
-        const currentScoreElement = document.getElementById('current-score');
-        const currentScoreText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentScoreText);
-        // console.log(currentScoreText);
-        // 2. increase the score by 1
-        const newScore = currentScore+1;
-        // 3. show the updated score
-        currentScoreElement.innerText = newScore;
 
-        // start a new round
+    if(playerPressed === currentAlphabet) {
+        const currentScore = getTextElementValueById('current-score');
+        const updatedScore = currentScore + 1;
+        setTextElementValueById('current-score', updatedScore);
         removeBackgroundColor(currentAlphabet);
         continueGame();
     } else {
-        // console.log('you lost a life');
-        // step-1: get the current Life number
-        const currentLifeElement = document.getElementById('current-life');
-        const currentLifeText = currentLifeElement.innerText;
-        const currentLife = parseInt(currentLifeText);
-        // step-2: reduce the life count
-        const newLife = currentLife - 1;
-
-        // step-3: display the updated life count
-        currentLifeElement.innerText = newLife;
+        const currentLife = getTextElementValueById('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueById('current-life', updatedLife);
 
     }
     
